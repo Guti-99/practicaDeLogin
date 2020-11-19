@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><form action="/" method="POST" class="formularioPerris">
+    <label for="email">Email</label>
+    <br>
+    <input type="email" placeholder="Email" name="email" id="email">
+    <br>
+    <label for="contraseña">Contraseña</label>
+    <input type="password" placeholder="Contraseña" name="contraseña" id="password">
+    <br>
+    <label for="recordame">Recordame</label>
+    <input type="checkbox">
+    <br>
+    <div>
+        <% if (typeof errores != "undefined") {
+           console.log(errores)%>
+            <p style="color: red;">error</p>
+            <ul>
+                <% for (let i = 0; i < errores.length; i++) { %>
+                <li>
+                    <%= errores[i].msg %>
+                </li>
+                <%}%>
+            </ul>
+        <%}%>
+    </div>
+    <button type="submit">Ingresar</button>
+</form>
+   
+</body>
+</html>
